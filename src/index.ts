@@ -1,11 +1,12 @@
-const aedes = require('aedes');
-const net = require('net');
-const mqtt = require('mqtt')
+import * as aedes from 'aedes'
+import * as net from 'net'
+import * as mqtt from 'mqtt'
 
-const mqttServer = aedes();
+const mqttServer = aedes.createBroker();
 
 const server = net.createServer(mqttServer.handle);
 
+ 
 const TOPIC = {
     PING : "limitlesslogic/ping"
 }
